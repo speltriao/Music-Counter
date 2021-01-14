@@ -12,11 +12,12 @@
 
 <b>SCREENSHOTS</b> 
 <br></br>
-<i>Using the current directory as base</i>:
+<br></br>
+<b><i>0-)Using the current directory as base</i></b>:
 <br></br>
 ![ScreenShot](print0.png)
 <br></br>
-<i>Setting a custom directory as base</i>:
+<b><i>1-)Setting a custom directory as base</i></b>:
 <br></br>
 ![ScreenShot](print1.png)
 
