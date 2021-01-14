@@ -9,8 +9,9 @@
 <p><b>1-)</b> If the program is at "Music" folder, it will count only the music from the "Music" folder and all folders inside it.</p>
 <p><b>2-)</b> If the program is at /, it will search the whole disk for musics.</p>
 
-<br></br>
+
 <b>SCREENSHOT</b> <i>(As in Example 1)</i>:
+<br></br>
 ![ScreenShot](print2.png)
 
 <br></br>
