@@ -9,7 +9,7 @@
 <p><b>0-)</b> Type 0 to use the current directory as base for the counter.</p>
 <p><b>1-)</b> Type 1 to specify a custom path as base for the counter.</p>
 <br></br>
-<br></br>
+
 <b>SCREENSHOTS:</b> 
 
 <b>0-)<i>Using the current directory as base</i></b>:
