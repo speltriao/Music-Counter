@@ -32,7 +32,7 @@ char* menu(){
     static char cust_path[limit];
     do
     {
-        printf("Type 0 to use the current directory as base, or 1 to specify a path \n\n");
+        printf("Type 0 to use the current directory as base, or 1 to specify a path:\n");
         scanf(" %c",&in);
     }while ((in!='0')&&(in!='1'));
     if (in=='0') return get_current_dir();
@@ -77,17 +77,19 @@ void output(){
 }
 
 void flush ( FILE *in ){
-  int ch;
-  do
-    ch = fgetc ( in ); 
-  while ( ch != EOF && ch != '\n' ); 
-  clearerr ( in );
+    int ch;
+    do{
+        ch = fgetc ( in ); 
+    }while ( ch != EOF && ch != '\n' ); 
+    clearerr ( in );
 }
 
 void pause (){
-  printf ( "Press [Enter] to continue . . ." );
-  fflush (stdout);
-  getchar();
+    flush(stdin);
+    printf("Press [Enter] to continue . . ." );
+    flush(stdout);
+    getchar();
+    
 } 
 
 int main(void)
