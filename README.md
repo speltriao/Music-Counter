@@ -10,5 +10,5 @@
 <p><b>2-)</b> If the program is at /, it will search the whole disk for musics.</p>
 
 <br></br>
-<b>SCREENSHOT</b> <i>(As in Example 1)</i>
+<b>SCREENSHOT</b> <i>(As in Example 1)</i>:
 ![ScreenShot](print2.png)
