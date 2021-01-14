@@ -12,3 +12,6 @@
 <br></br>
 <b>SCREENSHOT</b> <i>(As in Example 1)</i>:
 ![ScreenShot](print2.png)
+
+<b>DOWNLOAD THE PROGRAM</b>
+<p>https://github.com/speltriao/Music-Counter/releases</p>
