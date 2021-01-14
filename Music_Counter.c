@@ -35,12 +35,12 @@ char* menu(){
         printf("Type 0 to use the current directory as base, or 1 to specify a path \n\n");
         scanf(" %c",&in);
     }while ((in!='0')&&(in!='1'));
-    
+    printf("%c",in);
     if (in=='0') return get_current_dir();
     else if(in=='1') {
         printf("Enter the desired path: ");
         //scanf("%s",&cust_path);
-        
+        flush(stdin);
         gets(cust_path);
         return(cust_path);
     }
@@ -75,17 +75,13 @@ void list_files(char* dire){
 
 void output(){
     printf("\nTotal of music found: %d\n\n",count);
-
-    //while( key != '\n' ) scanf(" %c",&key);
 }
 
 void flush ( FILE *in ){
   int ch;
-
   do
     ch = fgetc ( in ); 
   while ( ch != EOF && ch != '\n' ); 
-
   clearerr ( in );
 }
 
@@ -100,7 +96,6 @@ int main(void)
     hello_msg();
     list_files(menu());
     output();
-    flush(stdin);
     pause();
     return 0;
 }
