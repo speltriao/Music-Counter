@@ -35,7 +35,6 @@ char* menu(){
         printf("Type 0 to use the current directory as base, or 1 to specify a path \n\n");
         scanf(" %c",&in);
     }while ((in!='0')&&(in!='1'));
-    printf("%c",in);
     if (in=='0') return get_current_dir();
     else if(in=='1') {
         printf("Enter the desired path: ");
