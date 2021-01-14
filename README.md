@@ -6,13 +6,20 @@
 <br><br>
 <b>USAGE EXAMPLE:</b>
 <p><i> Example Directory: /home/USER/Music </i></p>
-<p><b>1-)</b> If the program is at "Music" folder, it will count only the music from the "Music" folder and all folders inside it.</p>
-<p><b>2-)</b> If the program is at /, it will search the whole disk for musics.</p>
+<p><b>0-)</b> Type 0 to use the current directory as base for the counter.</p>
+<p><b>1-)</b> Type 1 to specify a custom path as base for the counter.</p>
 
 
-<b>SCREENSHOT</b> <i>(As in Example 1)</i>:
+<b>SCREENSHOTS</b> 
 <br></br>
-![ScreenShot](print2.png)
+<i>Using the current directory as base</i>:
+<br></br>
+![ScreenShot](print0.png)
+<br></br>
+<i>Setting a custom directory as base</i>:
+<br></br>
+![ScreenShot](print1.png)
+
 
 <br></br>
 <b>DOWNLOAD THE PROGRAM:</b>
