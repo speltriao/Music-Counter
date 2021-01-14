@@ -92,8 +92,7 @@ void pause (){
     
 } 
 
-int main(void)
-{
+int main(void){
     hello_msg();
     list_files(menu());
     output();
