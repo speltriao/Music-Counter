@@ -39,7 +39,6 @@ char* menu(){
     if (in=='0') return get_current_dir();
     else if(in=='1') {
         printf("Enter the desired path: ");
-        //scanf("%s",&cust_path);
         flush(stdin);
         gets(cust_path);
         return(cust_path);
@@ -77,12 +76,12 @@ void output(){
     printf("\nTotal of music found: %d\n\n",count);
 }
 
-void flush ( FILE *in ){
-    int ch;
+void flush (FILE *in){
+    intch;
     do{
-        ch = fgetc ( in ); 
-    }while ( ch != EOF && ch != '\n' ); 
-    clearerr ( in );
+        ch=fgetc(in); 
+    }while (ch !=EOF && ch != '\n'); 
+    clearerr(in);
 }
 
 void pause (){
