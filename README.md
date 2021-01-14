@@ -15,5 +15,5 @@
 ![ScreenShot](print2.png)
 
 <br></br>
-<b>DOWNLOAD THE PROGRAM</b>
+<b>DOWNLOAD THE PROGRAM:</b>
 <p>https://github.com/speltriao/Music-Counter/releases</p>
