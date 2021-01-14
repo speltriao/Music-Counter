@@ -21,5 +21,5 @@
 <br></br>
 
 <br></br>
-<b>DOWNLOAD:</b>
+<b>DOWNLOADS:</b>
 <p>https://github.com/speltriao/Music-Counter/releases</p>
