@@ -10,4 +10,4 @@
 <p><b>2-)</b> If the program is at /, it will search the whole disk for musics.</p>
 
 
-![ScreenShot](print.png)
+![ScreenShot](print2.png)
