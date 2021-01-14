@@ -9,10 +9,41 @@
 
 static int count = 0; //Global variable for counting music files found
 
+void hello_msg(){
+    printf("\n");
+    printf("  __  __                 _               _____                                         _                 \n");
+    printf(" |  \\/  |               (_)             / ____|                                       | |                \n");
+    printf(" | \\  / |  _   _   ___   _    ___      | |        ___    _ __   __   __   ___   _ __  | |_    ___   _ __ \n");
+    printf(" | |\\/| | | | | | / __| | |  / __|     | |       / _ \\  | '_ \\  \\ \\ / /  / _ \\ | '__| | __|  / _ \\ | '__|\n");
+    printf(" | |  | | | |_| | \\__ \\ | | | (__      | |____  | (_) | | | | |  \\ V /  |  __/ | |    | |_  |  __/ | |   \n");
+    printf(" |_|  |_|  \\__,_| |___/ |_|  \\___|      \\_____|  \\___/  |_| |_|   \\_/    \\___| |_|     \\__|  \\___| |_|   \n");
+    printf("\n");
+
+}
+
 char* get_current_dir(){ //Return the current directory (where the program is)
     static char cwd[limit];
     getcwd(cwd, sizeof(cwd));
     return cwd;
+}
+
+char* menu(){
+    char in;
+    static char cust_path[limit];
+    do
+    {
+        printf("Type 0 to use the current directory as base, or 1 to specify a path \n\n");
+        scanf(" %c",&in);
+    }while ((in!='0')&&(in!='1'));
+    
+    if (in=='0') return get_current_dir();
+    else if(in=='1') {
+        printf("Enter the desired path: ");
+        //scanf("%s",&cust_path);
+        
+        gets(cust_path);
+        return(cust_path);
+    }
 }
 
 char is_music(char* string){ //Check if file is music
@@ -42,13 +73,34 @@ void list_files(char* dire){
     
 }
 
+void output(){
+    printf("\nTotal of music found: %d\n\n",count);
+
+    //while( key != '\n' ) scanf(" %c",&key);
+}
+
+void flush ( FILE *in ){
+  int ch;
+
+  do
+    ch = fgetc ( in ); 
+  while ( ch != EOF && ch != '\n' ); 
+
+  clearerr ( in );
+}
+
+void pause (){
+  printf ( "Press [Enter] to continue . . ." );
+  fflush (stdout);
+  getchar();
+} 
+
 int main(void)
 {
-    char input;
-    list_files(get_current_dir());
-    printf("Total of music found: %d\n\n",count);
-    printf("Press Enter to exit...");
-    scanf("%c",&input);
-    if (input==10) exit(0); //Char 10 is the "Enter" in ASCII//
+    hello_msg();
+    list_files(menu());
+    output();
+    flush(stdin);
+    pause();
     return 0;
 }
