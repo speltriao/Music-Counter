@@ -14,9 +14,8 @@
 
 <b>0-)<i>Using the current directory as base</i></b>:
 ![ScreenShot](print0.png)
-
+<br></br><br></br>
 <b>1-)<i>Setting a custom directory as base</i></b>:
-
 ![ScreenShot](print1.png)
 <br></br>
 
