@@ -3,7 +3,7 @@
 
 <p>->Music formats supported: MP3,WMA, WAV, FlAC, M4A, AAC, OGG.</p>
 <p>->Select a base directory and it wiil search everywhere starting from there (all its subdirectories and files), recursively. </p>
-<p>->Supports Linux and Windows</p>
+<p>->Supports Linux and Windows.</p>
 <br><br>
 <b>USAGE EXAMPLE:</b>
 <p><i> Example Directory: /home/USER/Music </i></p>
