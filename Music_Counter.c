@@ -80,7 +80,6 @@ void list_files(char* dire){
         }
     }
     closedir(d);
-    
 }
 
 void output(){
