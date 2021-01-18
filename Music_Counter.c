@@ -64,7 +64,6 @@ char is_music(char* string){ //Check if file is music
 }
 
 void list_files(char* dire){
-    
     char new_dir[limit];
     struct dirent *dir;
     DIR *d = opendir(dire);
@@ -97,11 +96,9 @@ void flush(FILE *in){
 }
 
 void pause(){
-    
     printf("Press [Enter] to continue . . .");
     flush(stdout);
     getchar();
-    
 } 
 
 int main(void)
