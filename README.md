@@ -2,7 +2,7 @@
 <b>Fast C program for counting music files</b>
 
 <p>->Music formats supported: MP3,WMA, WAV, FLAC, M4A, AAC, OGG.</p>
-<p>->Select a base directory and it wiil search everywhere starting from there (including given all its subdirectories), recursively. </p>
+<p>->Select a base directory and it wiil search everywhere starting from there (including all its subdirectories), recursively. </p>
 <p>->Supports Linux and Windows.</p>
 <br><br>
 <b>USAGE EXAMPLE:</b>
