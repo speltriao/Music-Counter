@@ -8,7 +8,6 @@
 <p>->Supports Linux and Windows©.</p>
 <br><br>
 <b>USAGE EXAMPLE:</b>
-<p><i> Example Directory: /home/USER/Music </i></p>
 <p><b>0-)</b> Type 0 to use the current directory as base for the counter.</p>
 <p><b>1-)</b> Type 1 to specify a custom path as base for the counter.</p>
 <p><b>Y-)</b> Type Y to generate .txt file with all songs.</p>
