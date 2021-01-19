@@ -11,14 +11,13 @@
 <p><i> Example Directory: /home/USER/Music </i></p>
 <p><b>0-)</b> Type 0 to use the current directory as base for the counter.</p>
 <p><b>1-)</b> Type 1 to specify a custom path as base for the counter.</p>
-<br></br>
 <p><b>Y-)</b> Type Y to generate .txt file with all songs.</p>
 <p><b>N-)</b> Type N to NOT generate a .txt file with allsong.</p>
 <br></br>
 
 <b>SCREENSHOTS:</b> 
 
-<b>0-)<i>Using the current directory as base</i></b>:
+<b>0-)<i>Using the current directory as base and creating .txt file</i></b>:
 ![ScreenShot](prints.png)
 <br></br><br></br>
 <b>1-)<i>Setting a custom directory as base</i></b>:
