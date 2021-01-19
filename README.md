@@ -19,7 +19,7 @@
 ![ScreenShot](print.png)
 <br></br><br></br>
 <b>1-)<i>Setting a custom directory as base</i></b>:
-![ScreenShot](screenshot.png)
+![ScreenShot](print.png)
 <br></br>
 
 
