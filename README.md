@@ -20,7 +20,7 @@
 <b>0-)<i>Using the current directory as base and creating .txt file</i></b>:
 ![ScreenShot](prints.png)
 <br></br><br></br>
-<b>1-)<i>Setting a custom directory as base</i></b>:
+<b>1-)<i>Setting a custom directory as base and NOT creating .txt file</i></b>:
 ![ScreenShot](print.png)
 <br></br>
 
