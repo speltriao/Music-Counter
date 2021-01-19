@@ -16,7 +16,7 @@
 <b>SCREENSHOTS:</b> 
 
 <b>0-)<i>Using the current directory as base</i></b>:
-![ScreenShot](print_0.png)
+![ScreenShot](print.png)
 <br></br><br></br>
 <b>1-)<i>Setting a custom directory as base</i></b>:
 ![ScreenShot](screenshot.png)
