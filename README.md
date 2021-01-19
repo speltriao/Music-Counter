@@ -3,7 +3,7 @@
 
 <p>->Music formats supported: MP3,WMA, WAV, FLAC, M4A, AAC, OGG.</p>
 <p>->Select a base directory and it wiil search everywhere starting from there (including all its subdirectories), recursively. </p>
-<p>->Option to create a .txt file with all found music.</p>
+<p>->Option to create a .txt file, listing all found music.</p>
 <p>->Supports Linux and Windows.</p>
 <br><br>
 <b>USAGE EXAMPLE:</b>
