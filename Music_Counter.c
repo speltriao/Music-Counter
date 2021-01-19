@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <dirent.h>
+#include <unistd.h>
 
 #define limit 1000
 #define true 1
@@ -16,6 +17,11 @@
 #define CYAN    "\x1b[36m"
 #define RESET   "\x1b[0m"
 
+//BOLD TEXT//
+#define BOLD "\e[1;37m"
+
+//UNDERLINE//
+#define UNDER "\e[4;37m"
 
 void hello_msg(){
     printf("\n");
@@ -44,14 +50,15 @@ char* get_current_dir(){ //Return the current directory (where the program is)
     getcwd(cwd, sizeof(cwd));
     return cwd;
 }
+
 char txt(){
-    char yn[3];
+    char yn[4];
 
     while(1){
         printf("Save a list of all music in a .txt file? [Y/n]: ");
-        scanf(" %s",yn);
+        scanf("%s",yn);
         if((strcmp(yn, "y")==0)||((strcmp(yn, "Y")==0)||((strcmp(yn, "yes")==0)||((strcmp(yn, "Yes")==0)||((strcmp(yn, "YES")==0)))))) {
-            printf(YELLOW "\nA .txt file will be saved at: %s"RESET,get_current_dir());
+            printf(UNDER"\nA .txt file will be saved at: %s"RESET,get_current_dir());
             printf("\n\n");
             return true;
         }
@@ -67,7 +74,7 @@ char* menu(){
 
     while(1){
         printf("Type 0 to use the current directory as base, or 1 to specify a path: ");
-        scanf(" %s",in);
+        scanf("%s",in);
         printf("\n");
         if (strcmp(in,"0")==0) {
             flush(stdin);
@@ -88,23 +95,53 @@ char is_music(char* string){ //Check if file is music
     ||(strstr(string, ".aac"))||(strstr(string, ".flac"))) return true;
     return false;
 }
+
+int count_music(char* music){ //return the position of array
+    //mp3, m4a, wav, wma, ogg, aac, flac
+    //[0]  [1]  [2]  [3]  [4]  [5]   [6]
+    if((strstr(music, ".mp3"))){
+        return 0;
+    }
+    else if ((strstr(music, ".m4a"))){
+        return 1;
+    }
+    else if ((strstr(music, ".wav"))){
+        return 2;
+    }
+    else if ((strstr(music, ".wma"))){
+        return 3;
+    }
+    else if ((strstr(music, ".ogg"))){
+        return 4;
+    }
+    else if ((strstr(music, ".aac"))){
+        return 5;
+    }
+    else if ((strstr(music, ".flac"))){
+        return 6;
+    }
+}
+
 void write_txt(char* string){
     static char exists = false;
     FILE * fp;
     char name[20]="music_counter.txt";
     if( exists == true ) {// append file
-        fp = fopen(name,"a+");
+        fp = fopen(name,"a");
         fprintf(fp,"%s\n",string);
         
     }
-    else if (exists == false) {// create empty file
+    else{// create empty file
         exists = true;
         fp = fopen(name,"w");
         fprintf(fp,"%s\n",string);
     }
+    fclose(fp);
 }
-int list_files(char txt,char* dire){
-    static int count = 0; //static variable for counting music files found
+int* list_files(char txt, char* dire){
+                            //mp3, m4a, wav, wma, ogg, aac, flac
+                            //[0]  [1]  [2]  [3]  [4]  [5]   [6]
+    static int contador[7]={   0,   0,   0,   0,   0,   0,    0 };
     char new_dir[limit];
     struct dirent *dir;
     DIR *d = opendir(dire);
@@ -113,9 +150,11 @@ int list_files(char txt,char* dire){
     
     while (dir = readdir(d)){ //While dir exists
         if ((strcmp(dir->d_name, "."))&&(strcmp(dir->d_name, ".."))){ // Drop ".."(parent directory)"."(current directory)
-            if(is_music(dir->d_name)==true){
-                if(txt==true) write_txt(dir->d_name);//Write to txt file
-                count++;
+            if(is_music(dir->d_name)==true){//Check if file is music
+                if(txt==true) {
+                    write_txt(dir->d_name);//Write music to txt file
+                }
+                contador[count_music(dir->d_name)]++;
             } 
             strcpy(new_dir,dire); //strcpy(destination,source)  - copy string 'new_dire' to 'dire'
             strcat(new_dir,"/"); //strcat(destination, source) - concatenate string, adding "/"
@@ -124,19 +163,56 @@ int list_files(char txt,char* dire){
         }
     }
     closedir(d);
-    return count;
+    return contador;
 }
 
-void pause(){
+void pauser(){
     flush(stdin);
     printf("\nPress [Enter] to continue . . .");
     flush(stdout);
     getchar();
 } 
 
+void output(int* contador){
+    printf("-----------------------------------\n");
+    int total=0;
+
+    if (contador[0]!=0){
+        printf(RED "MP3 files found: %d\n" RESET,contador[0]);
+        total = contador[0];
+    }
+    if (contador[1]!=0){
+        printf(GREEN "M4A files found:%d\n" RESET,contador[1]);
+        total = contador[1]+total;
+    }
+    if (contador[2]!=0){
+        printf(YELLOW "WAV files found:%d\n" RESET,contador[2]);
+        total = contador[2]+total;
+    }
+    if (contador[3]!=0){
+        printf(BLUE "WMA files found:%d\n" RESET,contador[3]);
+        total = contador[3]+total;
+    }
+    if (contador[4]!=0){
+        printf(MAGENTA "OGG files found:%d\n"RESET,contador[4]);
+        total = contador[4]+total;
+    }
+    if (contador[5]!=0){
+        printf("AAC files found:%d\n",contador[5]);
+        total = contador[5]+total;
+    }
+    if (contador[6]!=0){
+        printf(CYAN "FLAC files found:%d\n"RESET,contador[6]);
+        total = contador[6]+total;
+    }
+    printf("-----------------------------------\n");
+    printf(BOLD"TOTAL OF MUSIC FOUND: %d\n" RESET, total);
+    
+}
+
 int main(void){
     hello_msg();
-    printf(RED "\nTotal of music found: %d\n"RESET ,list_files(txt(),menu()));
-    pause();
+    output(list_files(txt(),menu()));
+    pauser();
     return 0;
 }
