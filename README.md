@@ -12,6 +12,9 @@
 <p><b>0-)</b> Type 0 to use the current directory as base for the counter.</p>
 <p><b>1-)</b> Type 1 to specify a custom path as base for the counter.</p>
 <br></br>
+<p><b>Y-)</b> Type Y to generate .txt file with all songs.</p>
+<p><b>N-)</b> Type N to NOT generate a .txt file with allsong.</p>
+<br></br>
 
 <b>SCREENSHOTS:</b> 
 
