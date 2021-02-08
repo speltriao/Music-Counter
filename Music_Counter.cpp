@@ -130,7 +130,7 @@ void list_files(std::string s,bool txt){
 }
 
 void output(){
-    std::cout<<"-----------------------------------\n\n";
+    std::cout<<"-----------------------------------\n";
     int total=0;
     if (cmp3!=0){
         std::cout<<RED "MP3 files found:"<<cmp3<<"\n";
@@ -160,11 +160,11 @@ void output(){
         std::cout<<CYAN "FLAC files found:" RESET<<cflac<<"\n";
         total = cflac+total;
     }
-    std::cout<<RESET"\n-----------------------------------\n";
-    std::cout<< BOLD "\nTOTAL OF MUSIC FOUND:" RESET<< total<<"\n";
+    std::cout<<RESET"-----------------------------------\n";
+    std::cout<< BOLD "TOTAL OF MUSIC FOUND:" RESET<< total<<"\n\n";
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     do {
-       std::cout<<"Press enter to continue... ";
+       std::cout<<"Press [Enter] to continue... ";
     }while (std::cin.get() != '\n');
 }
 
@@ -174,4 +174,3 @@ int main(){
     output();
     return 0;
 }
-
