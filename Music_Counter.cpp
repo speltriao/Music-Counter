@@ -123,7 +123,7 @@ void list_files(std::string s,bool txt){
     std::string path = s;
     for (const auto & entry : fs::directory_iterator(path)){
         if((entry.is_regular_file())){
-            if((is_music(entry.path())&&(txt==true))) write_txt(entry.path());
+            if((is_music(entry.path())&&(txt))) write_txt(entry.path());
         }
         else if (entry.is_directory())   list_files(entry.path(),txt);
     }
