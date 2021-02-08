@@ -161,7 +161,7 @@ void output(){
         total = cflac+total;
     }
     std::cout<<RESET"\n-----------------------------------\n";
-    std::cout<< BOLD "\nTOTAL OF MUSIC FOUND:" RESET<< total<<"\n\n\n";
+    std::cout<< BOLD "\nTOTAL OF MUSIC FOUND:" RESET<< total<<"\n";
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     do {
        std::cout<<"Press enter to continue... ";
