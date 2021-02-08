@@ -1,5 +1,5 @@
 # Music-Counter
-<b>Fast C program for counting music files</b>
+<b>Fast C++ program for counting music files</b>
 
 <p>->Music formats supported: MP3,WMA, WAV, FLAC, M4A, AAC, OGG.</p>
 <p>->Select a base directory and it wiil search everywhere starting from there (including all its subdirectories), recursively. </p>
