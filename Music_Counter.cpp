@@ -120,8 +120,7 @@ void write_txt(std::string str){
 }
 
 void list_files(std::string s,bool txt){
-    std::string path = s;
-    for (const auto & entry : fs::directory_iterator(path)){
+    for (const auto & entry : fs::directory_iterator(s)){
         if((entry.is_regular_file())){
             if((is_music(entry.path())&&(txt))) write_txt(entry.path());
         }
@@ -174,3 +173,4 @@ int main(){
     output();
     return 0;
 }
+
