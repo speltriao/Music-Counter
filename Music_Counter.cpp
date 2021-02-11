@@ -61,7 +61,7 @@ bool txt(){
     std::string yn;
     while(1){
         std::cout<<"Save a list of all music in a .txt file? [Y/n]: ";
-        std::cin>>yn;
+        std::getline(std::cin,yn);
         if((yn.compare("y")==0)||(yn.compare("Y")==0)||(yn.compare("yes")==0)||(yn.compare("Yes")==0)||(yn.compare("YES")==0)) {
     
             std::cout<<UNDER"\nA .txt file will be saved at:"<<fs::current_path()<<"\n\n"<<RESET;
