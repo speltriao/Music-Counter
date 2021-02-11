@@ -49,7 +49,8 @@ std::string menu(){
         }
         else if (in=='1') {
             std::cout<<"Enter the desired path: ";
-            std::cin>>cust_path;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::getline(std::cin,cust_path);
             std::cout<<"\n";
             return cust_path;
         }
@@ -120,7 +121,8 @@ void write_txt(std::string str){
 }
 
 void list_files(std::string s,bool txt){
-    for (const auto & entry : fs::directory_iterator(s)){
+    std::string path = s;
+    for (const auto & entry : fs::directory_iterator(path)){
         if((entry.is_regular_file())){
             if((is_music(entry.path())&&(txt))) write_txt(entry.path());
         }
@@ -161,7 +163,6 @@ void output(){
     }
     std::cout<<RESET"-----------------------------------\n";
     std::cout<< BOLD "TOTAL OF MUSIC FOUND:" RESET<< total<<"\n\n";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     do {
        std::cout<<"Press [Enter] to continue... ";
     }while (std::cin.get() != '\n');
