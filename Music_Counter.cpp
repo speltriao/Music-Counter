@@ -121,12 +121,11 @@ void write_txt(std::string str){
 }
 
 void list_files(std::string s,bool txt){
-    std::string path = s;
-    for (const auto & entry : fs::directory_iterator(path)){
+    for (const auto & entry : fs::directory_iterator(s)){
         if((entry.is_regular_file())){
             if((is_music(entry.path())&&(txt))) write_txt(entry.path());
         }
-        else if (entry.is_directory())   list_files(entry.path(),txt);
+        else if (entry.is_directory())   list_files(s,txt);
     }
 }
 
@@ -163,6 +162,7 @@ void output(){
     }
     std::cout<<RESET"-----------------------------------\n";
     std::cout<< BOLD "TOTAL OF MUSIC FOUND:" RESET<< total<<"\n\n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     do {
        std::cout<<"Press [Enter] to continue... ";
     }while (std::cin.get() != '\n');
