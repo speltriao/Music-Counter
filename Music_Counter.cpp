@@ -21,7 +21,6 @@
 //UNDERLINE//
 #define UNDER "\e[4;37m"
 
-
 namespace fs = std::filesystem;
 
 unsigned int cmp3=0, cm4a=0, cwav=0, cwma=0, cogg=0, caac=0,cflac=0; //Global counting variables//
@@ -174,4 +173,3 @@ int main(){
     output();
     return 0;
 }
-
